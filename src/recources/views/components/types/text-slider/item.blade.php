@@ -7,10 +7,7 @@
             <div class="swiper-wrapper">
                 @foreach($item->orderedTexts as $index => $text)
                     <div class="swiper-slide">
-                        <div>
-                            <div>{{ $text->title }}</div>
-                            <div>{{ $text->description }}</div>
-                        </div>
+                        <x-ebtxts::texts.teaser :$text />
                     </div>
                 @endforeach
             </div>
