@@ -12,4 +12,9 @@ return [
 
     // Components
     "customTextSliderComponent" => null,
+
+    // Templates
+    "templates" => [
+        "image-text-slider-record" => \GIS\EditableImageTextSliderBlock\Templates\ImageTextSlider::class,
+    ],
 ];

@@ -14,7 +14,7 @@
 
             let swiper = new Swiper(sliderElement, {
                 loop: true,
-                simulateTouch: true,
+                simulateTouch: false,
                 spaceBetween: 24,
                 slidesPerView: "auto",
 

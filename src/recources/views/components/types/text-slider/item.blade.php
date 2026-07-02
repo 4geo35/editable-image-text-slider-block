@@ -1,7 +1,7 @@
 @props(["item", "index"])
 @php($imageRight = $index % 2 > 0)
 <div class="row">
-    <div class="col w-1/2 {{ $imageRight ? "order-last ml-auto" : "order-first" }}">
+    <div class="col w-1/2 {{ $imageRight ? "order-last ml-auto" : "order-first" }} flex flex-col justify-between">
         <div id="swiperBlockImageTextSlider-{{ $item->id }}"
              class="swiper overflow-hidden">
             <div class="swiper-wrapper">
@@ -24,7 +24,17 @@
         </div>
     </div>
     <div class="col w-5/12 {{ $imageRight ? "" : "ml-auto" }}">
-        Image
+        @if ($item->recordable->image)
+            @php($fileName = $item->recordable->image->file_name)
+            <a href="{{ route('thumb-img', ['template' => 'original', 'filename' => $fileName]) }}"
+               data-fslightbox="lightbox-{{ $item->id }}">
+                <picture>
+                    <source media="(min-width: 1024px)" srcset="{{ route('thumb-img', ['template' => 'image-text-slider-record', 'filename' => $fileName]) }}">
+                    <img src="{{ route('thumb-img', ['template' => 'image-text-slider-record', 'filename' => $fileName]) }}"
+                         alt="" class="rounded-base">
+                </picture>
+            </a>
+        @endif
     </div>
 </div>
 @include("eitsb::web.types.text-slider.includes.swiper-script")

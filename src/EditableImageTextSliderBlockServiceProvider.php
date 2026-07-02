@@ -28,6 +28,7 @@ class EditableImageTextSliderBlockServiceProvider extends ServiceProvider
     {
         $eitsb = app()->config["editable-image-text-slider-block"];
         $this->expandBlocks($eitsb);
+        $this->expandTemplates($eitsb);
     }
 
     protected function addLivewireComponents(): void

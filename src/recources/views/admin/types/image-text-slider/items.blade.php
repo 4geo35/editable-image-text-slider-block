@@ -11,7 +11,7 @@
                 @include("eitsb::admin.types.image-text-slider.item")
                 @include("eb::admin.types.includes.help-info")
             </div>
-            <livewire:ebtxts-text-list :blockItem="$item"
+            <livewire:ebtxts-text-list :blockItem="$item" wire:key="image-text-slider-block-{{ $item->id }}"
                                        textConstraint="{{ config('editable-image-text-slider-block.textConstraint') }}" />
         </div>
     @endforeach
