@@ -19,7 +19,7 @@ class EditableImageTextSliderBlockServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->loadViewsFrom(__DIR__ . "/recources/views", "eitsb");
+        $this->loadViewsFrom(__DIR__ . "/resources/views", "eitsb");
         $this->addLivewireComponents();
         $this->expandConfiguration();
     }
