@@ -1,6 +1,7 @@
 @props(["item", "index"])
 @php($imageRight = $index % 2 > 0)
 @php($imageRight = config("editable-image-text-slider-block.firstBlockImageOnLeftSide") ? $imageRight : ! $imageRight)
+@php($hasSlider = $item->orderedTexts->count() > 1)
 <div class="row">
     <div class="col w-full lg:w-5/12 mb-indent-half sm:mb-indent lg:mb-0 {{ $imageRight ? "lg:ml-auto" : "" }}">
         @if ($item->recordable->image)
@@ -30,15 +31,19 @@
             </div>
         </div>
 
-        <div class="flex items-center justify-start space-x-indent-half mt-indent-half sm:mt-indent"
-             id="swiperBlockImageTextSliderNavigation-{{ $item->id }}">
-            <button type="button" class="prev-btn btn btn-primary px-btn-x-ico rotate-180">
-                <x-tt::ico.arrow-right />
-            </button>
-            <button type="button" class="next-btn btn btn-primary px-btn-x-ico">
-                <x-tt::ico.arrow-right />
-            </button>
-        </div>
+        @if ($hasSlider)
+            <div class="flex items-center justify-start space-x-indent-half mt-indent-half sm:mt-indent"
+                 id="swiperBlockImageTextSliderNavigation-{{ $item->id }}">
+                <button type="button" class="prev-btn btn btn-primary px-btn-x-ico rotate-180">
+                    <x-tt::ico.arrow-right />
+                </button>
+                <button type="button" class="next-btn btn btn-primary px-btn-x-ico">
+                    <x-tt::ico.arrow-right />
+                </button>
+            </div>
+        @endif
     </div>
 </div>
-@include("eitsb::web.types.text-slider.includes.swiper-script")
+@if ($hasSlider)
+    @include("eitsb::web.types.text-slider.includes.swiper-script")
+@endif
