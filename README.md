@@ -32,3 +32,4 @@
 Название типа блока: `imageTextSlider`
 
 - `firstBlockImageOnLeftSide` => `false`: вывод в шахматном порядке начнется слева
+- `textConstraint` => `env("EDITABLE_IMAGE_TEXT_CONSTRAINT", 400)`: ограничение на длину текста, если поставить 0, то ограничений не будет
