@@ -1,10 +1,14 @@
 ### Установка
 
-Добавить `"./vendor/4geo35/editable-image-text-slider-block/src/resources/views/livewire/admin/**/*.blade.php",
-        "./vendor/4geo35/editable-image-text-slider-block/src/resources/views/admin/**/*.blade.php",` в `tailwind.admin.config.js`, созданный в пакете `tailwindcss-theme`.
+Добавить в `tailwind.admin.config.js`, созданный в пакете `tailwindcss-theme`.
 
-Добавить `"./vendor/4geo35/editable-image-text-slider-block/src/resources/views/components/**/*.blade.php",
-        "./vendor/4geo35/editable-image-text-slider-block/src/resources/views/web/**/*.blade.php",` в `tailwind.config.js`, созданный в пакете `tailwindcss-theme`.
+    "./vendor/4geo35/editable-image-text-slider-block/src/resources/views/livewire/admin/**/*.blade.php",
+    "./vendor/4geo35/editable-image-text-slider-block/src/resources/views/admin/**/*.blade.php",
+
+Добавить в `tailwind.config.js`, созданный в пакете `tailwindcss-theme`.
+
+    "./vendor/4geo35/editable-image-text-slider-block/src/resources/views/components/**/*.blade.php",
+    "./vendor/4geo35/editable-image-text-slider-block/src/resources/views/web/**/*.blade.php",
 
 Установить слайдер `npm install swiper`
 
@@ -17,3 +21,14 @@
 Установить lightbox `npm install fslightbox`, добавить в `app.js`:
 
     import "fslightbox"
+
+#### Views
+
+Сокращение для представлений: `eitsb`
+
+#### Config
+
+Название файла: `editable-image-text-slider-block`  
+Название типа блока: `imageTextSlider`
+
+- `firstBlockImageOnLeftSide` => `false`: вывод в шахматном порядке начнется слева
